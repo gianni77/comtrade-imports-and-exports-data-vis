@@ -1,0 +1,13 @@
+UN Comtrade Code,WCO Abbreviation,Description
+1,-,No quantity
+2,m2,Area in square meters
+3,1000 kWh,Electrical energy in thousands of kilowatt-hours
+4,m,Length in meters
+5,u,Number of items
+6,2u,Number of pairs
+7,l,Volume in liters
+8,kg,Weight in kilograms
+9,1000u,Thousand of items
+10,U (jeu/pack),Number of packages
+11,12u,Dozen of items
+12,m3,Volume in cubic meters
