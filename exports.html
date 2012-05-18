@@ -1,22 +1,51 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="style.css">
+    <head>
+        <link rel="stylesheet" href="style.css">
 
-		<!--Typekit-->
-		<script type="text/javascript" src="http://use.typekit.com/zuj2szz.js"></script>
-		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-	</head>
-	<body>
-		<article id="exports">
-			<header>
-				<h2>India</h2>
-			</header>
-			<header>
-				<h2>China</h2>
-			</header>
-			<section id="chart">
-			</section>
-		</article>	
-	</body>
+        <!--Typekit-->
+        <script type="text/javascript" src="http://use.typekit.com/zuj2szz.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script src='javascript/d3.v2.js'></script>
+        <script src='javascript/async.js'></script>
+    </head>
+    <body>
+        <article id="exports">
+            <header>
+                <h2>India</h2>
+            </header>
+            <header>
+                <h2>China</h2>
+            </header>
+            <section id="chart">
+            </section>
+        </article>
+
+        <script>
+            async.parallel([
+                function fetchH3ChinaAndIndiaData(callback) {
+                    d3.csv('data/h3_china_india.csv', function(rows) {
+                        callback(null, rows);
+                    });
+                },
+                function fetchCountryData(callback) {
+                    d3.csv('data/country_data.csv', function(rows) {
+                        callback(null, rows);
+                    });
+                },
+                function fetchMeasurementData(callback) {
+                    d3.csv('data/measurement_data.csv', function(rows) {
+                        callback(null, rows);
+                    });
+                },
+                function fetchCommodityClassificationData(callback) {
+                    d3.csv('data/commodity_classification/H3.csv', function(rows) {
+                        callback(null, rows);
+                    });
+                }
+            ], function(error, results) {
+                console.log(results);
+            });
+        </script>
+    </body>
 </html>
