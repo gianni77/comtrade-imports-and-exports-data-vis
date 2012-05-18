@@ -28,14 +28,6 @@
 
         <script>
         (function() {
-            function ImportsAndExports(records, countryData, measurementData,
-                                       commodityClassificationData) {
-                this.records = records;
-                this.countryData = countryData;
-                this.measurementData = measurementData;
-                this.commodityClassificationData = commodityClassificationData;
-            }
-
             async.parallel([
                 function fetchH3ChinaAndIndiaData(callback) {
                     d3.csv('data/h3_china_india.csv', function(rows) {
