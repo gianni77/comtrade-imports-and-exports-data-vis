@@ -52,23 +52,26 @@ table {
 */
 
 body {
+	background: url(light_toast.png) repeat;
 	font-family: "raleway",sans-serif;
 	font-size: 100%;
-	margin: 0;
+	margin: 36px 0 0 0;
 	text-align: center;
 }
 
-h1 {font-size: 46px; color: #fff;}
-h2 {font-size: 36px;}
+h1 {font-size: 68px; color: #666;}
+h2 {font-size: 40px;}
+
+#China {color: #C1272D;}
+#India {color: #662D91;}
+
 
 /* 
 	Bits
 */
 article#exports > header {
-    background: #000;
-    padding: 36px 24px 24px 24px;
     text-align: left;
-    width: 240px;
+    width: 405px;
 }
 
 article#exports {
@@ -82,16 +85,16 @@ article#exports section header {
 }
 
 article#exports section header h2 {
-	color: #C1272D;
 	text-align: left;
 }
 
 article#exports section header:first-child h2 {
-	color: #662D91;
 	text-align: right;
 	width: 405px;
 	padding-right: 150px;
 }
+
+
 
 
 
