@@ -59,9 +59,24 @@ body {
 	text-align: center;
 }
 
-body:hover {background: url('http://farm7.staticflickr.com/6118/6266987736_54d1bb6a2d_o.jpg');}
+body:hover {
+	background: url('http://farm5.staticflickr.com/4019/5148730914_616e1b5975_o.jpg') -100px;
+	-webkit-transition:background .5s ease-in;  
+	-moz-transition:background .5s ease-in;  
+	-o-transition:background .5s ease-in;  
+	transition:background .5s ease-in;  
+}
 
-h1 {font-size: 68px; color: #fff;}
+body:hover h1 {color: #fff;}
+body:hover article#exports {
+	background: #000; opacity: 0.75;
+	-webkit-transition:background-color .5s ease-in;  
+	-moz-transition:background-color .5s ease-in;  
+	-o-transition:background-color .5s ease-in;  
+	transition:background-color .5s ease-in;  
+}
+
+h1 {font-size: 68px; color: #666;}
 h2 {font-size: 40px;}
 
 #China {color: #C1272D;}
@@ -71,17 +86,19 @@ h2 {font-size: 40px;}
 /* 
 	Bits
 */
+
+div.container {margin: 0 auto; width: 960px;}
+
 article#exports > header {
-    background: #000;
-    opacity:0.8;
-    padding: 48px 24px 18px 24px;
+    padding: 48px 0 0 0;
     text-align: left;
     width: 357px;
 }
 
 article#exports {
-	margin: 0 auto;
-	width: 960px;
+	width: 96%;
+	padding: 2%;
+	float: left;
 }
 
 article#exports section header {
