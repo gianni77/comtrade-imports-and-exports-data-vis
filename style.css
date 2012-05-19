@@ -55,11 +55,13 @@ body {
 	background: url(light_toast.png) repeat;
 	font-family: "raleway",sans-serif;
 	font-size: 100%;
-	margin: 36px 0 0 0;
+	margin: 0;
 	text-align: center;
 }
 
-h1 {font-size: 68px; color: #666;}
+body:hover {background: url('http://farm7.staticflickr.com/6118/6266987736_54d1bb6a2d_o.jpg');}
+
+h1 {font-size: 68px; color: #fff;}
 h2 {font-size: 40px;}
 
 #China {color: #C1272D;}
@@ -70,8 +72,11 @@ h2 {font-size: 40px;}
 	Bits
 */
 article#exports > header {
+    background: #000;
+    opacity:0.8;
+    padding: 48px 24px 18px 24px;
     text-align: left;
-    width: 405px;
+    width: 357px;
 }
 
 article#exports {
