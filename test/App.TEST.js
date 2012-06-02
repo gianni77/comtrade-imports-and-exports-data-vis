@@ -1,7 +1,7 @@
-describe('ImportsExportsVisualization', function() {
+describe('A153.App', function() {
     describe('#mapCommodityCodeToDescription', function() {
         it('should map a commodity code to a commodity description', function() {
-            var importsAndExports = new ImportsExportsVisualization([], [], [], [
+            var app = new A153.ImportsExports.App([], [], [], [
                 {
                     'AggregateLevel': '2',
                     'Code': '01',
@@ -20,8 +20,9 @@ describe('ImportsExportsVisualization', function() {
                 }
             ]);
 
-            importsAndExports.mapCommodityCodeToDescription('01').should.equal('Live animals; animal products');
-            importsAndExports.mapCommodityCodeToDescription('0101').should.equal('Live horses, asses, mules and hinnies.');
+            app.mapCommodityCodeToDescription('01').should.equal('Live animals; animal products');
+            app.mapCommodityCodeToDescription('0101').should.equal('Live horses, asses, mules and hinnies.');
         });
     });
+
 });
