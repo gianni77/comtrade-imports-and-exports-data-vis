@@ -70,30 +70,6 @@ h2 {font-size: 40px;}
 	Bits
 */
 
-body:hover h1 {
-	color: #fff;
-	-webkit-transition:background-color .5s ease-in;  
-	-moz-transition:background-color .5s ease-in;  
-	-o-transition:background-color .5s ease-in;  
-	transition:background-color .5s ease-in;  
-}
-
-body:hover {
-	background: url('http://farm5.staticflickr.com/4019/5148730914_616e1b5975_o.jpg') -100px;
-	-webkit-transition:background .5s ease-in;  
-	-moz-transition:background .5s ease-in;  
-	-o-transition:background .5s ease-in;  
-	transition:background .5s ease-in;  
-}
-
-body:hover article#exports {
-	background: #000;
-	opacity: 0.75;
-	-webkit-transition:background-color .5s ease-in;  
-	-moz-transition:background-color .5s ease-in;  
-	-o-transition:background-color .5s ease-in;  
-	transition:background-color .5s ease-in;  
-}
 
 #top {
 	background: #662d91; /* Old browsers */
@@ -116,9 +92,9 @@ body:hover article#exports {
 div.container {margin: 0 auto; width: 860px;}
 
 article#exports > header {
-    padding: 24px 0 0 0;
+    padding: 36px 0 0 0;
     text-align: left;
-    width: 307px;
+    width: 365px;
 }
 
 article#exports {
@@ -138,8 +114,8 @@ article#exports section header h2 {
 
 article#exports section header:first-child h2 {
 	text-align: right;
-	width: 355px;
-	padding-right: 150px;
+	width: 358px;
+	padding-right: 147px;
 }
 
 
