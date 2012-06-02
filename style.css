@@ -59,8 +59,9 @@ body {
 	text-align: center;
 }
 
-h1 {font-size: 68px; color: #666;}
-h2 {font-size: 40px;}
+h1 {font-size: 68px; color: #666; line-height: 1;}
+h2 {font-size: 45px;}
+h3 {font: normal 15px/15px droid-serif,sans-serif; color: #666; margin: 5px 0 20px 0;}
 
 #China {color: #C1272D;}
 #India {color: #662D91;}
@@ -102,16 +103,17 @@ article#exports section header {padding: 84px 0 24px 0;}
 article#exports .chart1 header h2 {text-align: right;}
 article#exports .chart2 header h2 {text-align: left;}
 
-article#exports .chart1, .chart2 {float: left;}
-article#exports .chart1 {margin-right: 150px;}
+article#exports .chart1, .commodityLabel, .chart2 {float: left;}
+
+article#exports .commodityLabel {width: 130px; padding: 0 10px; text-align: center;}
 
 
 /* Chart Styling */
 
 .bars div {
-	font: 14px sans-serif;
-	padding: 5px;
-	margin: 4px;
+	font: 15px/15px droid-serif, sans-serif;
+	padding: 5px 5px 3px;
+	margin: 0 0 12px 0;
 	color: white;
 	clear: both;
 }
