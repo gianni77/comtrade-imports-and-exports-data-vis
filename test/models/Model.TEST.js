@@ -15,5 +15,16 @@ describe('Model', function() {
                 throw 'Model.get should return undefined for an unset key';
             }
         });
+
+        it('should initialize with attributes passed to its ' +
+           'constructor', function() {
+            var model = new Model({
+                'key1': 'val1',
+                'key2': 'val2'
+            });
+
+            model.get('key1').should.equal('val1');
+            model.get('key2').should.equal('val2');
+        });
     });
 });
