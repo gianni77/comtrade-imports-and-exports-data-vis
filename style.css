@@ -91,36 +91,42 @@ h2 {font-size: 40px;}
 
 div.container {margin: 0 auto; width: 860px;}
 
-article#exports > header {
-    padding: 36px 0 0 0;
-    text-align: left;
-    width: 365px;
+article#exports > header {padding: 36px 0 0 0; text-align: left; width: 365px;}
+
+
+/*Chart Container*/
+
+article#exports {width: 906px;padding: 20px;float: left;}
+
+article#exports section header {padding: 84px 0 24px 0;}
+article#exports .chart1 header h2 {text-align: right;}
+article#exports .chart2 header h2 {text-align: left;}
+
+article#exports .chart1, .chart2 {float: left;}
+article#exports .chart1 {margin-right: 150px;}
+
+
+/* Chart Styling */
+
+.bars div {
+	font: 14px sans-serif;
+	padding: 5px;
+	margin: 4px;
+	color: white;
+	clear: both;
 }
 
-article#exports {
-	width: 96%;
-	padding: 2%;
-	float: left;
-}
-
-article#exports section header {
-	padding: 84px 0 24px 0;
-	float: left;
-}
-
-article#exports section header h2 {
+.bars.first div {
+	background-color: #662D91;
 	text-align: left;
+	float: right;
 }
 
-article#exports section header:first-child h2 {
+.bars.second div {
+	background-color: #C1272D;
 	text-align: right;
-	width: 358px;
-	padding-right: 147px;
+	float: left;
 }
-
-
-
-
 
 
 

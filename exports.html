@@ -16,18 +16,57 @@
                 <header>
                     <h1>World Commodity Trade</h1>
                 </header>
-                <section>
+                <section class="chart1">
                     <header>
                         <h2 id="India">India</h2>
                     </header>
+                </section>
+                <section class="chart2">
                     <header>
                         <h2 id="China">China</h2>
                     </header>
-                    <section id="chart">
-                    </section>
                 </section>
             </article>
         </div>
+        <script>
+            //Data Sets
+            var data1 = [60, 12, 2, 5, 40, 22];
+            var data2 = [4, 8, 15, 16, 23, 42];
+
+            //Create Charts
+            var chart = d3.select(".chart1")
+                          .append("div")
+                          .attr("class", "bars first");        
+            
+            var chart2 = d3.select(".chart2")
+                           .append("div")
+                           .attr("class", "bars second");
+
+            //Create scale for bars
+            var width1 = d3.scale.linear()
+                          .domain([0, d3.max(data1)])
+                          .range (["0px", "358px"]);
+
+            var width2 = d3.scale.linear()
+                          .domain([0, d3.max(data2)])
+                          .range (["0px", "358px"]);
+
+            //Add data to charts
+            chart.selectAll("div")
+                  .data(data1)
+                  .enter()
+                  .append("div")
+                  .style("width", width1)
+                  .text(String);
+
+            chart2.selectAll("div")
+                  .data(data2)
+                  .enter()
+                  .append("div")
+                  .style("width", width2)
+                  .text(String);
+
+        </script>
 
         <script>
         (function() {
