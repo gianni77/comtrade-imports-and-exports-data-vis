@@ -6,5 +6,14 @@ describe('Model', function() {
             model.set('key', 'val');
             model.get('key').should.equal('val');
         });
+
+        it('get should return undefined for an attribute that has not been ' +
+           'set', function() {
+
+            var model = new Model();
+            if (undefined !== model.get('unsetKey')) {
+                throw 'Model.get should return undefined for an unset key';
+            }
+        });
     });
 });
