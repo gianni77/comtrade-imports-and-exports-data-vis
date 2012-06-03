@@ -18,6 +18,7 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
+	font-weight: normal;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -49,18 +50,19 @@ table {
 
 body {
 	background: url(light_toast.png) repeat;
+	color: #111;
 	font-size: 100%;
 	margin: 0;
 	text-align: center;
-	font-family: ff-meta-web-pro; /*proxima-nova kulturista-web ff-meta-web-pro ff-meta-serif-web-pro myriad-pro*/
+	font-family: quatro-slab; /*proxima-nova kulturista-web ff-meta-web-pro ff-meta-serif-web-pro myriad-pro quatro-slab superclarendon*/
 }
 
-#logo {position: absolute; right: 20px; bottom: 20px; opacity: .2;}
-#logo:hover {opacity: .6;}
+#logo {position: absolute; right: 20px; bottom: 20px; opacity: .3;}
+#logo:hover {opacity: .7;}
 
-h1 {font-family: ff-meta-serif-web-pro; font-size: 60px; color: #666; line-height: .94; font-weight: 300; letter-spacing: -0.047em;}
-h2 {font-family: ff-meta-serif-web-pro; font-size: 30px; font-weight: 300;}
-h3 {font-size: 15px; line-height: 15px; font-weight: normal; color: #666; margin: 5px 0 20px 0;}
+h1 {font-family: quatro; font-size: 45px; font-weight: 700; line-height: .94;}
+h2 {font-family: quatro-slab; font-size: 25px; font-weight: normal;}
+h3 {font-size: 13px; line-height: 13px; margin: 5px 0 20px 0;}
 
 div.container {margin: 0 auto; width: 906px;}
 
@@ -71,7 +73,7 @@ article#exports > header {padding: 36px 0 0 0; text-align: left; width: 365px;}
 
 article#exports {width: 100%; padding: 20px; float: left;}
 
-article#exports section header {padding: 84px 0 24px 0;}
+article#exports section header {padding: 108px 0 24px 0;}
 article#exports .chart1 header h2 {text-align: right;}
 article#exports .chart2 header h2 {text-align: left;}
 
@@ -83,8 +85,8 @@ article#exports .commodityLabel {width: 150px; padding: 0 10px; text-align: cent
 /* Bar Styling */
 
 .bars div {
-	font-size: 15px;
-	line-height: 15px;
+	font-size: 11px;
+	line-height: 13px;
 	padding: 5px 5px 3px;
 	margin: 0 0 12px 0;
 	color: white;
@@ -92,22 +94,22 @@ article#exports .commodityLabel {width: 150px; padding: 0 10px; text-align: cent
 }
 
 .bars.first div {
-	text-align: left;
+	text-align: right;
 	float: right;
 }
 
 .bars.second div {
-	text-align: right;
+	text-align: left;
 	float: left;
 }
 
 
 /* Country Colors */
 
-#China h2 {color: #C1272D;}
+#China {color: #C1272D;}
 #China .bars div {background-color: #C1272D;}
 
-#India h2 {color: #662D91;}
+#India {color: #662D91;}
 #India .bars div {background-color: #662D91;}
 
 
