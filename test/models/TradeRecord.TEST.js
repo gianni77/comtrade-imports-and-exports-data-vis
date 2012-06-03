@@ -20,5 +20,25 @@ describe('A153.ImportsExports.Model.TradeRecord', function() {
             record.commodityCategoryIsTopLevel().should.be.false;
         });
     });
+
+    describe('#isImport', function() {
+        it('should return true if the trade record represents an import',
+           function() {
+            var record = new TradeRecord({
+                'tradeFlow': 'import'
+            });
+
+            record.isImport().should.be.true;
+        });
+
+        it('should return false if the trade record does not represent an ' +
+           'import', function() {
+            var record = new TradeRecord({
+                'tradeFlow': 'export'
+            });
+
+            record.isImport().should.be.false;
+        });
+    });
 });
 

@@ -22,6 +22,13 @@
          */
         commodityCategoryIsTopLevel: function() {
             return this.get('commodityCode').length == 2;
+        },
+
+        /**
+         * True if the trade record represents an import
+         */
+        isImport: function() {
+            return 'import' === this.get('tradeFlow');
         }
     });
 
