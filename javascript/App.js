@@ -72,6 +72,15 @@
         });
     };
 
+    App.sortByCommodityCode = function(records) {
+        return _.sortBy(records, function(record) {
+            // Multiply by 1000, as some codes are prefxied with up to three 0's
+            // and JavaScript interprets them as integers when comparing,
+            // dropping the 0's.
+            return record.get('commodityCode') * 1000;
+        });
+    };
+
     App.prototype.mapCommodityCodeToDescription = function(code) {
         return _.find(this.commodityClassificationData, function(el) {
             return (el.Code === code);
