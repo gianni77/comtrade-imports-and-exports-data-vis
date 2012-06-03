@@ -35,7 +35,7 @@
 
     App.prototype.mapRecordsToModels = function(records) {
         return _.map(records, function(record) {
-            return {
+            return new A153.ImportsExports.Model.TradeRecord({
                 'classification': record['Classification'],
                 'commodityCode': record['Commodity Code'],
                 'commodityDescription': this.mapCommodityCodeToDescription(
@@ -58,7 +58,7 @@
                 ),
                 'quantity': record['Supplementary Quantity'],
                 'value': record['Value']
-            };
+            });
         }, this);
     };
 

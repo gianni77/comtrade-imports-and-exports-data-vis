@@ -238,7 +238,7 @@ describe('A153.App', function() {
 
             var models = app.mapRecordsToModels(records);
 
-            models[0].should.eql({
+            models[0].toJSON().should.eql({
                 'classification': 'H3',
                 'commodityCode': '010619',
                 'commodityDescription': 'Live mammals, n.e.s.',
@@ -252,7 +252,7 @@ describe('A153.App', function() {
                 'value': '109'
             });
 
-            models[1].should.eql({
+            models[1].toJSON().should.eql({
                 'classification': 'H3',
                 'commodityCode': '0202',
                 'commodityDescription': 'Meat of bovine animals, frozen.',
