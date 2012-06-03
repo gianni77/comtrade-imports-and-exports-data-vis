@@ -1,4 +1,4 @@
-describe('A153.App', function() {
+describe('A153.ImportsExports.App', function() {
     describe('#mapCommodityCodeToDescription', function() {
         it('should map a commodity code to a commodity description', function() {
             var app = new A153.ImportsExports.App([], [], [], [

@@ -15,7 +15,15 @@
      *  quantity
      *  value
      */
-    var TradeRecord = Backbone.Model.extend();
+    var TradeRecord = Backbone.Model.extend({
+        /**
+         * True if the trade record's commodity category is a top level
+         * category.
+         */
+        commodityCategoryIsTopLevel: function() {
+            return this.get('commodityCode').length == 2;
+        }
+    });
 
     var exports = window;
 
