@@ -9,6 +9,20 @@
         this.tradeFlowData = tradeFlowData;
     }
 
+    /*
+     * Static methods
+     */
+
+    /**
+     * Accepts an array of TradeRecord models and removes any that do not
+     * represent a top level commodity category
+     */
+    App.filterRecordsWithLowLevelCommodityCategories = function(records) {
+        return _.filter(records, function(record) {
+            return record.commodityCategoryIsTopLevel();
+        });
+    };
+
     App.prototype.mapCommodityCodeToDescription = function(code) {
         return _.find(this.commodityClassificationData, function(el) {
             return (el.Code === code);

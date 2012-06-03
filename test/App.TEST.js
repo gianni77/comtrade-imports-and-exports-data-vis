@@ -1,7 +1,10 @@
 describe('A153.ImportsExports.App', function() {
+    var TradeRecord = A153.ImportsExports.Model.TradeRecord;
+    var App = A153.ImportsExports.App;
+
     describe('#mapCommodityCodeToDescription', function() {
         it('should map a commodity code to a commodity description', function() {
-            var app = new A153.ImportsExports.App([], [], [], [
+            var app = new App([], [], [], [
                 {
                     'AggregateLevel': '2',
                     'Code': '01',
@@ -27,7 +30,7 @@ describe('A153.ImportsExports.App', function() {
 
     describe('#mapCountryCodeToName', function() {
         it('should map a country code to the correct country name', function() {
-            var app = new A153.ImportsExports.App([], [{
+            var app = new App([], [{
                 'Country Abbrevation': "China",
                 'Country Code': "156",
                 'Country Fullname English': "China",
@@ -56,7 +59,7 @@ describe('A153.ImportsExports.App', function() {
 
     describe('#mapMeasurementCodeToDescription', function() {
         it('should map a measurement code to the correct description', function() {
-            var app = new A153.ImportsExports.App([], [], [{
+            var app = new App([], [], [{
                 'Description': 'No quantity',
                 'UN Comtrade Code': '1',
                 'WCO Abbreviation': '-'
@@ -78,7 +81,7 @@ describe('A153.ImportsExports.App', function() {
 
     describe('#mapEstimationCodeToDescription', function() {
         it('should map an estimation code to the correct description', function() {
-            var app = new A153.ImportsExports.App([], [], [], [], [{
+            var app = new App([], [], [], [], [{
                 'estimationCode': '0',
                 'description': 'No estimation'
             }, {
@@ -101,7 +104,7 @@ describe('A153.ImportsExports.App', function() {
 
     describe('#mapTradeFlowCodeToDescription', function() {
         it('should map a trade flow code to the correct description', function() {
-            var app = new A153.ImportsExports.App([], [], [], [], [], [{
+            var app = new App([], [], [], [], [], [{
                 'tradeFlowCode': '1',
                 'description': 'import'
             }, {
@@ -125,7 +128,7 @@ describe('A153.ImportsExports.App', function() {
     describe('#mapRecordsToModels', function() {
         it('should map an array of records from the csv to an array of ' +
            'models consumable by the application', function() {
-            var app = new A153.ImportsExports.App([], [
+            var app = new App([], [
                 {
                     'Country Abbrevation': "China",
                     'Country Code': "156",
@@ -266,6 +269,23 @@ describe('A153.ImportsExports.App', function() {
                 'value': '68010'
             });
 
+        });
+    });
+
+    describe('#filterRecordsWithLowLevelCommodityCategories', function() {
+        it('should return an array of models with only high level commodity ' +
+           'categories', function() {
+            var records = [
+                new TradeRecord({commodityCode: '0202'}),
+                new TradeRecord({commodityCode: '02'}),
+                new TradeRecord({commodityCode: '03'}),
+                new TradeRecord({commodityCode: '0303'})
+            ];
+
+            var filteredRecords = App.filterRecordsWithLowLevelCommodityCategories(records);
+            filteredRecords.length.should.equal(2);
+            filteredRecords[0].get('commodityCode').should.equal('02');
+            filteredRecords[1].get('commodityCode').should.equal('03');
         });
     });
 });
