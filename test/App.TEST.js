@@ -332,4 +332,32 @@ describe('A153.ImportsExports.App', function() {
             filteredRecords[1].should.equal(record4);
         });
     });
+
+    describe('#filterCommoditiesWithOnlyImportOrExport', function() {
+        it('should return an array of trade records that have a corresponding ' +
+           'import/export record', function() {
+            var record1Import = new TradeRecord({commodityCode: '01', tradeFlow: 'import'});
+            var record1Export = new TradeRecord({commodityCode: '01', tradeFlow: 'export'});
+            var record2Import = new TradeRecord({commodityCode: '02', tradeFlow: 'import'});
+            var record3Export = new TradeRecord({commodityCode: '03', tradeFlow: 'export'});
+            var record4Import = new TradeRecord({commodityCode: '04', tradeFlow: 'import'});
+            var record4Export = new TradeRecord({commodityCode: '04', tradeFlow: 'export'});
+
+            var records = [
+                record1Import,
+                record1Export,
+                record2Import,
+                record3Export,
+                record4Import,
+                record4Export
+            ];
+
+            var filteredRecords = App.filterCommoditiesWithOnlyImportOrExport(records);
+            filteredRecords.length.should.equal(4);
+            filteredRecords[0].should.equal(record1Import);
+            filteredRecords[1].should.equal(record1Export);
+            filteredRecords[2].should.equal(record4Import);
+            filteredRecords[3].should.equal(record4Export);
+        });
+    });
 });

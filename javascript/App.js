@@ -33,9 +33,42 @@
         });
     };
 
+    /**
+     * Filters records by a reporting country
+     */
     App.filterRecordsByReportingCountry = function(records, country) {
         return _.filter(records, function(record) {
             return country === record.get('countryName');
+        });
+    };
+
+    /**
+     * Removes records for commodities that do not have a corresponding
+     * import/export record
+     */
+    App.filterCommoditiesWithOnlyImportOrExport = function(records) {
+        var importRecords = _.filter(records, function(record) {
+            return record.isImport();
+        });
+
+        var mapToCommodityCodes = function(record) {
+            return record.get('commodityCode');
+        };
+        var importCommodities = _.map(importRecords, mapToCommodityCodes);
+        console.log(importCommodities);
+
+        var exportRecords = _.filter(records, function(record) {
+            return record.isExport();
+        });
+        var exportCommodities = _.map(exportRecords, mapToCommodityCodes);
+
+        var commoditiesWithImportAndExport = _.intersection(
+            importCommodities,
+            exportCommodities
+        );
+
+        return _.filter(records, function(record) {
+            return _.contains(commoditiesWithImportAndExport, record.get('commodityCode'));
         });
     };
 
