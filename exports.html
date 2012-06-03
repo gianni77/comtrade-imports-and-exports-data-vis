@@ -2,23 +2,24 @@
 <html>
     <head>
         <link rel="stylesheet" href="style.css">
-
         <!--Typekit-->
         <script type="text/javascript" src="http://use.typekit.com/yfg3wnw.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        
         <script src='javascript/d3.v2.js'></script>
         <script src='javascript/async.js'></script>
     </head>
     <body>
-        <div id="top">&nbsp;</div>
+        <a href="https://github.com/ryanhorn/comtrade-imports-and-exports-data-vis"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+
         <div class="container">
             <article id="exports">
                 <header>
                     <h1>World Commodity Trade</h1>
                 </header>
-                <section class="chart1">
+                <section class="chart1" id="India">
                     <header>
-                        <h2 id="India">India</h2>
+                        <h2>India</h2>
                     </header>
                 </section>
                 <section class="commodityLabel">
@@ -32,9 +33,9 @@
                     <h3>Walrus</h3>
                     <h3>Live Salmon</h3>
                 </section>
-                <section class="chart2">
+                <section class="chart2" id="China">
                     <header>
-                        <h2 id="China">China</h2>
+                        <h2>China</h2>
                     </header>
                 </section>
             </article>
@@ -54,27 +55,23 @@
                            .attr("class", "bars second");
 
             //Create scale for bars
-            var width1 = d3.scale.linear()
-                          .domain([0, d3.max(data1)])
-                          .range (["0px", "358px"]);
-
-            var width2 = d3.scale.linear()
-                          .domain([0, d3.max(data2)])
+            var scale = d3.scale.linear()
+                          .domain([0, d3.max(data1.concat(data2))])
                           .range (["0px", "358px"]);
 
             //Add data to charts
             chart.selectAll("div")
-                  .data(data1)
-                  .enter()
-                  .append("div")
-                  .style("width", width1)
-                  .text(String);
+                 .data(data1)
+                 .enter()
+                 .append("div")
+                 .style("width", scale)
+                 .text(String);
 
             chart2.selectAll("div")
                   .data(data2)
                   .enter()
                   .append("div")
-                  .style("width", width2)
+                  .style("width", scale)
                   .text(String);
 
         </script>

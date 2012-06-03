@@ -1,6 +1,4 @@
-/* 
-	Reset
-*/
+/* Reset */
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -47,57 +45,28 @@ table {
 }
 
 
-/* 
-	Global
-*/
+/* Global */
 
 body {
 	background: url(light_toast.png) repeat;
-	font-family: "raleway",sans-serif;
 	font-size: 100%;
 	margin: 0;
 	text-align: center;
+	font-family: ff-meta-serif-web-pro;
 }
 
-h1 {font-size: 68px; color: #666; line-height: 1;}
-h2 {font-size: 45px;}
-h3 {font: normal 15px/15px droid-serif,sans-serif; color: #666; margin: 5px 0 20px 0;}
+h1 {font-size: 68px; color: #666; line-height: .95; font-weight: 300; letter-spacing: -2px;}
+h2 {font-size: 42px; font-weight: 300;}
+h3 {font-size: 15px; line-height: 15px; font-weight: normal; color: #666; margin: 5px 0 20px 0;}
 
-#China {color: #C1272D;}
-#India {color: #662D91;}
-
-
-/* 
-	Bits
-*/
-
-
-#top {
-	background: #662d91; /* Old browsers */
-	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
-	background: -moz-linear-gradient(left,  #662d91 0%, #c1272d 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#662d91), color-stop(100%,#c1272d)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(left,  #662d91 0%,#c1272d 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left,  #662d91 0%,#c1272d 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left,  #662d91 0%,#c1272d 100%); /* IE10+ */
-	background: linear-gradient(left,  #662d91 0%,#c1272d 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#662d91', endColorstr='#c1272d',GradientType=1 ); /* IE6-8 */
-	height: 7px;
-	margin-bottom: -1px;
-	width: 100%;
-	position: absolute;
-	top: 0;
-	z-index: 1;
-}
-
-div.container {margin: 0 auto; width: 860px;}
+div.container {margin: 0 auto; width: 906px;}
 
 article#exports > header {padding: 36px 0 0 0; text-align: left; width: 365px;}
 
 
-/*Chart Container*/
+/* Chart Container */
 
-article#exports {width: 906px;padding: 20px;float: left;}
+article#exports {width: 100%; padding: 20px; float: left;}
 
 article#exports section header {padding: 84px 0 24px 0;}
 article#exports .chart1 header h2 {text-align: right;}
@@ -105,13 +74,14 @@ article#exports .chart2 header h2 {text-align: left;}
 
 article#exports .chart1, .commodityLabel, .chart2 {float: left;}
 
-article#exports .commodityLabel {width: 130px; padding: 0 10px; text-align: center;}
+article#exports .commodityLabel {width: 150px; padding: 0 10px; text-align: center;}
 
 
-/* Chart Styling */
+/* Bar Styling */
 
 .bars div {
-	font: 15px/15px droid-serif, sans-serif;
+	font-size: 15px;
+	line-height: 15px;
 	padding: 5px 5px 3px;
 	margin: 0 0 12px 0;
 	color: white;
@@ -119,16 +89,24 @@ article#exports .commodityLabel {width: 130px; padding: 0 10px; text-align: cent
 }
 
 .bars.first div {
-	background-color: #662D91;
 	text-align: left;
 	float: right;
 }
 
 .bars.second div {
-	background-color: #C1272D;
 	text-align: right;
 	float: left;
 }
+
+
+/* Country Colors */
+
+#China h2 {color: #C1272D;}
+#China .bars div {background-color: #C1272D;}
+
+#India h2 {color: #662D91;}
+#India .bars div {background-color: #662D91;}
+
 
 
 
