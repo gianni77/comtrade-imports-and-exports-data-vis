@@ -23,9 +23,19 @@
         });
     };
 
+    /**
+     * Accepts an array of TradeRecord models and removes any that do not
+     * represent an export
+     */
     App.filterNonExportRecords = function(records) {
         return _.filter(records, function(record) {
             return record.isExport();
+        });
+    };
+
+    App.filterRecordsByReportingCountry = function(records, country) {
+        return _.filter(records, function(record) {
+            return country === record.get('countryName');
         });
     };
 

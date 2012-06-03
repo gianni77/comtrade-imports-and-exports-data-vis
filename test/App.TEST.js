@@ -310,4 +310,26 @@ describe('A153.ImportsExports.App', function() {
             filteredRecords[1].should.equal(export2);
         });
     });
+
+    describe('#filterRecordsByReportingCountry', function() {
+        it('should return an array of trade records for a specific reporting ' +
+           'country', function() {
+            var record1 = new TradeRecord({countryName: 'India'});
+            var record2 = new TradeRecord({countryName: 'China'});
+            var record3 = new TradeRecord({countryName: 'China'});
+            var record4 = new TradeRecord({countryName: 'India'});
+
+            var records = [
+                record1,
+                record2,
+                record3,
+                record4
+            ];
+
+            var filteredRecords = App.filterRecordsByReportingCountry(records, 'India');
+            filteredRecords.length.should.equal(2);
+            filteredRecords[0].should.equal(record1);
+            filteredRecords[1].should.equal(record4);
+        });
+    });
 });
