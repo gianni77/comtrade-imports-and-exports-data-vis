@@ -1,4 +1,20 @@
 (function() {
+    /**
+     * Represents a single trading record between two countries for a given
+     * commodity. Has the following properties:
+     *
+     *  classification
+     *  commodityCode
+     *  commodityDescription
+     *  estimationDescription
+     *  netWeight
+     *  countryName
+     *  partnerName
+     *  tradeFlow
+     *  unitOfMeasurement
+     *  quantity
+     *  value
+     */
     var TradeRecord = Backbone.Model.extend();
 
     var exports = window;
