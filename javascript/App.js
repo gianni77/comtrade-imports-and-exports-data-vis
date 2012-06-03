@@ -23,6 +23,12 @@
         });
     };
 
+    App.filterNonExportRecords = function(records) {
+        return _.filter(records, function(record) {
+            return record.isExport();
+        });
+    };
+
     App.prototype.mapCommodityCodeToDescription = function(code) {
         return _.find(this.commodityClassificationData, function(el) {
             return (el.Code === code);

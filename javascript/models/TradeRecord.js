@@ -29,6 +29,13 @@
          */
         isImport: function() {
             return 'import' === this.get('tradeFlow');
+        },
+
+        /**
+         * True if the trade record represents an export
+         */
+        isExport: function() {
+            return 'export' === this.get('tradeFlow');
         }
     });
 

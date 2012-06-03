@@ -288,4 +288,26 @@ describe('A153.ImportsExports.App', function() {
             filteredRecords[1].get('commodityCode').should.equal('03');
         });
     });
+
+    describe('#filterNonExportRecords', function() {
+        it('should return an array of trade records representing exports only',
+           function() {
+            var export1 = new TradeRecord({tradeFlow: 'export'});
+            var import1 = new TradeRecord({tradeFlow: 'import'});
+            var import2 = new TradeRecord({tradeFlow: 'import'});
+            var export2 = new TradeRecord({tradeFlow: 'export'});
+
+            var records = [
+                export1,
+                import1,
+                import2,
+                export2
+            ];
+
+            var filteredRecords = App.filterNonExportRecords(records);
+            filteredRecords.length.should.equal(2);
+            filteredRecords[0].should.equal(export1);
+            filteredRecords[1].should.equal(export2);
+        });
+    });
 });

@@ -40,5 +40,25 @@ describe('A153.ImportsExports.Model.TradeRecord', function() {
             record.isImport().should.be.false;
         });
     });
+
+    describe('#isExport', function() {
+        it('should return true if the trade record represents an export',
+           function() {
+            var record = new TradeRecord({
+                'tradeFlow': 'export'
+            });
+
+            record.isExport().should.be.true;
+        });
+
+        it('should return false if the trade record does not represent an ' +
+           'export', function() {
+            var record = new TradeRecord({
+                'tradeFlow': 'import'
+            });
+
+            record.isExport().should.be.false;
+        });
+    });
 });
 
